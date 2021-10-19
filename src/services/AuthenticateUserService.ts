@@ -41,6 +41,7 @@ class AuthenticateUserService {
         },
       });
 
+    //pegando informações do usuario de dentro do github
     const response = await axios.get<IUserResponse>(
       "https://api.github.com/user",
       {
