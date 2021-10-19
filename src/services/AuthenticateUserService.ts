@@ -15,7 +15,8 @@ import { sign } from "jsonwebtoken";
 interface IAccessTokenResponse {
   access_token: string;
 }
-
+/*Interface: It defines the syntax for classes to follow. 
+Classes that are derived from an interface must follow the structure provided by their interface.*/
 interface IUserResponse {
   avatar_url: string;
   login: string;
@@ -23,6 +24,7 @@ interface IUserResponse {
   name: string;
 }
 
+//Autenticação do usuario
 class AuthenticateUserService {
   async execute(code: string) {
     const url = "https://github.com/login/oauth/access_token";
@@ -67,7 +69,7 @@ class AuthenticateUserService {
         },
       });
     }
-
+    //gerando um token
     const token = sign(
       {
         user: {
